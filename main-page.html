@@ -46,7 +46,12 @@
     clickHTML.addEventListener('click',openHTML);
 
     function openHTML() {
-        htmlLists.style.display = 'block';
+        if(htmlLists.style.display === 'none'){
+            htmlLists.style.display = 'block';
+        }else {
+            htmlLists.style.display = 'none';
+        }
+
     }
 
     let clickCSS = document.getElementById('click-css');
@@ -54,7 +59,11 @@
     clickCSS.addEventListener('click',openCSS);
 
     function openCSS() {
-        cssLists.style.display = 'block';
+        if(cssLists.style.display === 'none'){
+            cssLists.style.display = 'block';
+        }else {
+            cssLists.style.display = 'none';
+        }
     }
 
     let clickJS = document.getElementById('click-javascript');
@@ -62,9 +71,21 @@
     clickJS.addEventListener('click',openJS);
 
     function openJS() {
-        jsLists.style.display = 'block';
+        if(jsLists.style.display === 'none'){
+            jsLists.style.display = 'block';
+        }else {
+            jsLists.style.display = 'none';
+        }
     }
 
+    var oddNumbers = document.getElementById('odd-numbers').addEventListener('click',oddNumberClick);
+    function oddNumberClick() {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'oddNumbers.js';
+        document.getElementsByTagName("head")[0].appendChild(script);
+        return false;
+    }
 
 </script>
 
