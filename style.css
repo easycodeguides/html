@@ -5,3 +5,4 @@ ul.navigations li{ list-style:none; display:inline-block; text-align:center; }
 nav a{ padding:15px 100px; text-decoration:none; color:#fff; background:#267326; }
 nav a:hover{ background:#fff; color:#267326; border:1px solid #267326; }
 .kolona{ border:1px solid #ccc; width:30%; float:left; }
+.languages-lists{ display:none;}

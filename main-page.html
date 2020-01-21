@@ -18,26 +18,55 @@
         </nav>
     </div>
 
-    <ul>
-        <li id="odd-numbers">
-            <button>Odd Numbers</button>
-        </li>
-        <li id="even-numbers">
-            <button>Even Numbers</button>
-        </li>
-        <li id="simple-prompt">
-            <button>Simple Prompt</button>
-        </li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+    <ul id="css-lists" class="languages-lists">
+        <li><button>CSS-grid</button></li>
+        <li><button>CSS-flex</button></li>
     </ul>
 
+    <ul id="html-lists" class="languages-lists">
+        <li><button>Calendar</button></li>
+        <li><button>Form</button></li>
+        <li><button>Comments</button></li>
+    </ul>
+    <ul id="javascript-lists" class="languages-lists">
+        <li id="odd-numbers"><button>Odd Numbers</button></li>
+        <li id="even-numbers"><button>Even Numbers</button></li>
+        <li id="simple-prompt"><button>Simple Prompt</button></li>
+    </ul>
+
+    <div id="display-here"></div>
+
 </div>
+
+<script>
+
+    let displayHere = document.getElementById('display-here');
+    let clickHTML = document.getElementById('click-html');
+    let htmlLists = document.getElementById('html-lists');
+    clickHTML.addEventListener('click',openHTML);
+
+    function openHTML() {
+        htmlLists.style.display = 'block';
+    }
+
+    let clickCSS = document.getElementById('click-css');
+    let cssLists = document.getElementById('css-lists');
+    clickCSS.addEventListener('click',openCSS);
+
+    function openCSS() {
+        cssLists.style.display = 'block';
+    }
+
+    let clickJS = document.getElementById('click-javascript');
+    let jsLists = document.getElementById('javascript-lists');
+    clickJS.addEventListener('click',openJS);
+
+    function openJS() {
+        jsLists.style.display = 'block';
+    }
+
+
+</script>
 
 </body>
 </html>
