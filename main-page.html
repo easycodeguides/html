@@ -19,21 +19,22 @@
     </div>
 
     <ul id="css-lists" class="languages-lists">
-        <li><button>CSS-grid</button></li>
-        <li><button>CSS-flex</button></li>
+        <li><a>CSS-grid</a></li>
+        <li><a>CSS-flex</a></li>
     </ul>
 
     <ul id="html-lists" class="languages-lists">
-        <li><button>Calendar</button></li>
-        <li><button>Form</button></li>
-        <li><button>Comments</button></li>
+        <li><a>Calendar</a></li>
+        <li><a>Form</a></li>
+        <li><a>Comments</a></li>
     </ul>
     <ul id="javascript-lists" class="languages-lists">
-        <li id="odd-numbers"><button>Odd Numbers</button></li>
-        <li id="even-numbers"><button>Even Numbers</button></li>
-        <li id="simple-prompt"><button>Simple Prompt</button></li>
+        <li id="odd-numbers"><a>Odd Numbers</a></li>
+        <li id="even-numbers"><a>Even Numbers</a></li>
+        <li id="simple-prompt"><a>Simple Prompt</a></li>
     </ul>
 
+    <div id="display-here"></div>
 
 </div>
 
@@ -57,19 +58,16 @@
         return cssLists
     }
 
-    let clickJS = document.getElementById('click-javascript');
-    let jsLists = document.getElementById('javascript-lists');
-    clickJS.addEventListener('click',openJS);
+    document.getElementById('click-javascript').addEventListener('click',openJS);
 
     function openJS() {
+        let jsLists = document.getElementById('javascript-lists');
         jsLists.style.display = 'block';
     }
 
-
-
-    var oddNumbers = document.getElementById('odd-numbers').addEventListener('click',oddNumberClick);
+    document.getElementById('odd-numbers').addEventListener('click',oddNumberClick);
     function oddNumberClick() {
-        var script = document.createElement('script');
+        let script = document.createElement('script');
         script.type = 'text/javascript';
         script.src = 'oddNumbers.js';
         document.getElementsByTagName("head")[0].appendChild(script);
@@ -80,3 +78,4 @@
 
 </body>
 </html>
+ 
