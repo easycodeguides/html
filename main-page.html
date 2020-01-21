@@ -34,23 +34,17 @@
         <li id="simple-prompt"><button>Simple Prompt</button></li>
     </ul>
 
-    <div id="display-here"></div>
 
 </div>
 
 <script>
 
-    let displayHere = document.getElementById('display-here');
     let clickHTML = document.getElementById('click-html');
     let htmlLists = document.getElementById('html-lists');
     clickHTML.addEventListener('click',openHTML);
 
     function openHTML() {
-        if(htmlLists.style.display === 'none'){
-            htmlLists.style.display = 'block';
-        }else {
-            htmlLists.style.display = 'none';
-        }
+        htmlLists.style.display = 'block';
 
     }
 
@@ -59,11 +53,8 @@
     clickCSS.addEventListener('click',openCSS);
 
     function openCSS() {
-        if(cssLists.style.display === 'none'){
-            cssLists.style.display = 'block';
-        }else {
-            cssLists.style.display = 'none';
-        }
+        cssLists.style.display = 'block';
+        return cssLists
     }
 
     let clickJS = document.getElementById('click-javascript');
@@ -71,12 +62,10 @@
     clickJS.addEventListener('click',openJS);
 
     function openJS() {
-        if(jsLists.style.display === 'none'){
-            jsLists.style.display = 'block';
-        }else {
-            jsLists.style.display = 'none';
-        }
+        jsLists.style.display = 'block';
     }
+
+
 
     var oddNumbers = document.getElementById('odd-numbers').addEventListener('click',oddNumberClick);
     function oddNumberClick() {
