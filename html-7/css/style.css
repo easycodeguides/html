@@ -18,12 +18,3 @@ nav ul li a {
     background-color: green;
     color:white;
 }
-
-/*nav ul li:hover {
-    background-color: white;
-}*/
-
-nav ul li a:hover {
-    color: green;
-    background-color: azure;
-}
