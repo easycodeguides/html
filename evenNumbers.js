@@ -11,3 +11,4 @@ function evenNumbers() {
 evenNumbers();
 
 console.log(nums);
+
