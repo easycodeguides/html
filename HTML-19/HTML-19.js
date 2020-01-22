@@ -1,23 +1,18 @@
 
-let ispisPolje = document.getElementById("ispisPolje");
-let submitDugme = document.getElementById("submit");
-submitDugme.addEventListener("click", preslovi);
+let writeField = document.getElementById("writeField");
+let submitButton = document.getElementById("submit");
+submitButton.addEventListener("click", changeLetters);
 
-function preslovi(){
-        let ispis = [];
+function changeLetters(){
+        let letters = [];
         let input = document.getElementById("input").value;
         input.split('').forEach(function(c) {
             if (c === c.toUpperCase()) {
-                ispis.push(c.toLowerCase());
+                letters.push(c.toLowerCase());
             }
             else  {
-                ispis.push(c.toUpperCase());
+                letters.push(c.toUpperCase());
             }
         });
-        ispisPolje.innerText = ispis;
+        writeField.innerText = letters.join('');
 }
-
-
-
-
-
