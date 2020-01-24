@@ -19,19 +19,19 @@
     </div>
 
     <ul id="css-lists" class="languages-lists">
-        <li><a>CSS-grid</a></li>
-        <li><a>CSS-flex</a></li>
+        <li><a href="#">CSS-grid</a></li>
+        <li><a href="#">CSS-flex</a></li>
     </ul>
 
     <ul id="html-lists" class="languages-lists">
-        <li><a>Calendar</a></li>
-        <li><a>Form</a></li>
-        <li><a>Comments</a></li>
+        <li><a href="#">Calendar</a></li>
+        <li><a href="#">Form</a></li>
+        <li><a href="#">Comments</a></li>
     </ul>
     <ul id="javascript-lists" class="languages-lists">
-        <li id="odd-numbers"><a>Odd Numbers</a></li>
-        <li id="even-numbers"><a>Even Numbers</a></li>
-        <li id="simple-prompt"><a>Simple Prompt</a></li>
+        <li id="html-15"><a>HTML-15 - Odd Numbers</a></li>
+        <li id="html-16"><a>HTML-16 - Even Numbers</a></li>
+        <li id="html-17"><a>HTML-17 - Simple Prompt</a></li>
     </ul>
 
     <div id="display-here"></div>
@@ -40,12 +40,18 @@
 
 <script>
 
-    document.getElementById('odd-numbers').addEventListener('click',oddNumberClick);
+    document.getElementById('html-15').addEventListener('click',oddNumberClick);
+    document.getElementById('html-16').addEventListener('click',evenNumberClick);
+
     function oddNumberClick() {
         let script = document.createElement('script');
         script.src = 'oddNumbers.js';
         document.getElementsByTagName("head")[0].appendChild(script);
-        return false;
+    }
+    function evenNumberClick() {
+        let script = document.createElement('script');
+        script.src = 'evenNumbers.js';
+        document.getElementsByTagName("head")[0].appendChild(script);
     }
 
 </script>
