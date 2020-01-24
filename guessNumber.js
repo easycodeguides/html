@@ -1,20 +1,26 @@
 
-const guessNumber = function () {
+function guessNumber(from, to, numberOfTrials) {
     
-    let randomNumber = Math.floor(Math.random()* 10), 
-        strNumber = prompt('Guess a number between 0 and 10:');
-    const intNumber = parseInt(strNumber);
-
-    if(intNumber < randomNumber){     
-        return 'Your number is lower then the correct answer.';
-    } else if(intNumber > randomNumber){
-        return 'Your number is higher then the correct answer.';
-    } else {
-        return 'Correct answer.'
+    const randomNumber = Math.round(Math.random() * (to - from)) + from;
+    
+    for(let i = 0; i < numberOfTrials; i++){
+        
+        const yourNumber = Number(prompt(`Guess the number from ${from} to ${to}.`));
+        
+        if(!yourNumber || (yourNumber < from || yourNumber > to)){
+            alert('You entered incorrect number or out of the correct interval');
+        } else {
+            if(yourNumber < randomNumber){     
+                alert('Your number is lower then the correct answer.');
+            } else if(yourNumber > randomNumber){
+                alert('Your number is higher then the correct answer.');
+            } else {
+                alert('You guessed the number.');
+                break;
+            }
+        }
     }
 }
 
-for(let i = 0; i < 3; i++){
-    alert(guessNumber());
-}
+guessNumber(0, 10, 3);
 
