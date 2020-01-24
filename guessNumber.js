@@ -1,4 +1,3 @@
-
 function guessNumber(from, to, numberOfTrials) {
     
     const randomNumber = Math.round(Math.random() * (to - from)) + from;
