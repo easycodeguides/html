@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>HTML Tutorijal</title>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <nav>
+            <ul class="navigations">
+                <li><a href="#" id="click-html">HTML</a></li>
+                <li><a href="#" id="click-css">CSS</a></li>
+                <li><a href="#" id="click-javascript">JAVASCRIPT</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <ul id="css-lists" class="languages-lists">
+        <li><a href="#">CSS-grid</a></li>
+        <li><a href="#">CSS-flex</a></li>
+    </ul>
+
+    <ul id="html-lists" class="languages-lists">
+        <li><a href="#">Calendar</a></li>
+        <li><a href="#">Form</a></li>
+        <li><a href="#">Comments</a></li>
+    </ul>
+    <ul id="javascript-lists" class="languages-lists">
+        <li id="html-15"><a href="#">HTML-15 - Odd Numbers</a></li>
+        <li id="html-16"><a href="#">HTML-16 - Even Numbers</a></li>
+        <li id="html-17"><a href="#">HTML-17 - Simple Prompt</a></li>
+    </ul>
+
+    <div id="display-here"></div>
+
+</div>
+
+<script>
+
+    document.getElementById('html-15').addEventListener('click',oddNumberClick);
+    document.getElementById('html-16').addEventListener('click',evenNumberClick);
+
+    let projectSource = {
+        oddNumbers:'oddNumbers.js',
+        evenNumbers:'evenNumbers.js'
+    };
+
+    function oddNumberClick() {
+        let script = document.createElement('script');
+        script.src = projectSource.oddNumbers;
+        document.getElementsByTagName("head")[0].appendChild(script);
+    }
+    function evenNumberClick() {
+        let script = document.createElement('script');
+        script.src = projectSource.even;
+        document.getElementsByTagName("head")[0].appendChild(script);
+    }
+
+</script>
+<script src="main.js"></script>
+
+</body>
+</html>

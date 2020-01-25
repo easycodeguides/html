@@ -1,0 +1,10 @@
+.container{ width:100%; margin:auto; }
+.header{ width:95%; margin:auto; }
+li{ list-style:none; margin: 10px 0}
+ul.navigations li{ list-style:none; display:inline-block; text-align:center; }
+nav a{ padding:15px 100px; text-decoration:none; color:#fff; background:#267326; }
+nav a:hover{ background:#fff; color:#267326; border:1px solid #267326; }
+.kolona{ border:1px solid #ccc; width:30%; float:left; }
+.languages-lists{ display:none;}
+.languages-lists li{display:block; margin:25px 0}
+.languages-lists li>a{padding: 10px; margin: 10px 0; border: solid 1px #ccc; background: #eee; cursor:pointer;}
