@@ -29,9 +29,9 @@
         <li><a href="#">Comments</a></li>
     </ul>
     <ul id="javascript-lists" class="languages-lists">
-        <li id="html-15"><a>HTML-15 - Odd Numbers</a></li>
-        <li id="html-16"><a>HTML-16 - Even Numbers</a></li>
-        <li id="html-17"><a>HTML-17 - Simple Prompt</a></li>
+        <li id="html-15"><a href="#">HTML-15 - Odd Numbers</a></li>
+        <li id="html-16"><a href="#">HTML-16 - Even Numbers</a></li>
+        <li id="html-17"><a href="#">HTML-17 - Simple Prompt</a></li>
     </ul>
 
     <div id="display-here"></div>
@@ -43,14 +43,19 @@
     document.getElementById('html-15').addEventListener('click',oddNumberClick);
     document.getElementById('html-16').addEventListener('click',evenNumberClick);
 
+    let projectSource = {
+        oddNumbers:'oddNumbers.js',
+        evenNumbers:'evenNumbers.js'
+    };
+
     function oddNumberClick() {
         let script = document.createElement('script');
-        script.src = 'oddNumbers.js';
+        script.src = projectSource.oddNumbers;
         document.getElementsByTagName("head")[0].appendChild(script);
     }
     function evenNumberClick() {
         let script = document.createElement('script');
-        script.src = 'evenNumbers.js';
+        script.src = projectSource.even;
         document.getElementsByTagName("head")[0].appendChild(script);
     }
 
