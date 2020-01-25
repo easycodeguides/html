@@ -6,22 +6,24 @@ function changing() {
 
 function getCyrillic(latin) {
     let cyrillic = latin;
-    for (let i = 0; i < latin.length; i++) {
-        if (latin[i] === "l" && latin[i+1] === "j") {
-            cyrillic[i] = "љ";
+    let latinString = latin.split('');
+    let cyrillicString = cyrillic.split('');
+    for (let i = 0; i < latinString.length; i++) {
+        if (latinString[i] === "l" && latinString[i+1] === "j") {
+            cyrillicString[i] = "љ";
             i++;
         }
-        if (latin[i] === "n" && latin[i+1] === "j") {
-            cyrillic[i] = "њ";
+        if (latinString[i] === "n" && latinString[i+1] === "j") {
+            cyrillicString[i] = "њ";
             i++;
         }
-        if (latin[i] === "d" && latin[i+1] === "ž") {
-            cyrillic[i] = "џ";
+        if (latinString[i] === "d" && latinString[i+1] === "ž") {
+            cyrillicString[i] = "џ";
             i++;
         }
-        cyrillic[i] = switchTo(latin.charAt(i));
+        if (latinString[i] !== "l" && latinString[i] !== "n" && latinString[i] !== "d") { cyrillicString[i] = switchTo(latin.charAt(i)); }
     }
-    return cyrillic;
+    return cyrillic = cyrillicString.join('');
 }
 
 function switchTo(latinCharacter) {
