@@ -1,29 +1,32 @@
-let latinLetters = document.getElementById("latin").value.toString().toLowerCase();
-
 function changing() {
+    let latinLetters = document.getElementById("latin").value.toString().toLowerCase();
     document.getElementById("cyr").innerHTML = getCyrillic(latinLetters).toString();
 }
 
 function getCyrillic(latin) {
     let cyrillic = latin;
-    let latinString = latin.split('');
-    let cyrillicString = cyrillic.split('');
-    for (let i = 0; i < latinString.length; i++) {
-        if (latinString[i] === "l" && latinString[i+1] === "j") {
-            cyrillicString = setCharAt(cyrillicString, i ,"љ");
+    for (let i = 0; i < latin.length; i++) {
+        if (latin[i] === "l" && latin[i+1] === "j") {
+            cyrillic = setCharAt(cyrillic, i ,"љ");
             i++;
         }
-        if (latinString[i] === "n" && latinString[i+1] === "j") {
-            cyrillicString=setCharAt(cyrillicString,i ,"њ");
+        if (latin[i] === "n" && latin[i+1] === "j") {
+            cyrillic=setCharAt(cyrillic,i ,"њ");
             i++;
+            //continue; ? radi li ovo u js?
         }
-        if (latinString[i] === "d" && latinString[i+1] === "ž") {
-            cyrillicString=setCharAt(cyrillicString,i ,"џ");
+        if (latin[i] === "d" && latin[i+1] === "ž") {
+            cyrillic=setCharAt(cyrillic,i ,"џ");
             i++;
+            //continue;
         }
-        if (latinString[i] !== "l" && latinString[i] !== "n" && latinString[i] !== "d") { cyrillicString=setCharAt(cyrillicString, i , switchTo(latinString[i])); }
+        if (i > 0 && latin[i] === "j" && latin[i-1] !== "l" && latin[i-1] !== "n") {
+            cyrillic=setCharAt(cyrillic, i , switchTo(latin[i]));
+        }
+        if (i > 0 && latin[i] === "ž" && latin[i-1] !== "d") { cyrillic=setCharAt(cyrillic, i , switchTo(latin[i])); }
+        if (latin[i] !== "j" && latin[i] !== "ž") { cyrillic=setCharAt(cyrillic, i , switchTo(latin[i])); }
     }
-    return cyrillicString.join('');
+    return cyrillic;
 }
 
 function setCharAt(str,index,chr) {
