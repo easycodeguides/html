@@ -2,83 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>HTML-37</title>
+    <title>Tap the Number 2</title>
     <style type="text/css">
-        #color_list_0{ background-color:#f00; width:100px; height:50px }
-        #color_list_1{ background-color:#0f0; width:100px; height:50px }
-        #color_list_2{ background-color:#00f; width:100px; height:50px }
-        #list_0{ color:#f00 }
-        #list_1{ color:#0f0 }
-        #list_2{ color:#00f }
+        #color_0, #color_3{ background-color:#f00; width:100px; height:50px }
+        #color_1, #color_4{ background-color:#0f0; width:100px; height:50px }
+        #color_2, #color_5{ background-color:#00f; width:100px; height:50px }
     </style>
 </head>
 <body>
 
-<div id="click-this">Click</div>
+
+<div id="click-this">Click This</div>
 <div id="result"></div>
-<div id="select-color"></div>
-<script>
-
-    let selectColor = document.getElementById('select-color');
-    let colorResult = document.getElementById('result');
-    let randomNumber = Math.floor(Math.random() * 3);
-    document.getElementById('click-this').addEventListener('click', randomTextColor);
-    selectColor.addEventListener('click', selectColors);
-
-
-    function selectColors(event) {
-        let id = event.target.getAttribute('id');
-            if (id && id.charAt(11) == randomNumber) {
-                alert("You got the answer!")
-            } else {
-                alert("You didn't get the answer!")
-            }
-
-    }
-
-    function randomTextColor() {
-        listOfColors();
-    }
-
-    function listOfColors() {
-        let colorText = ['#f00', '#0f0', '#00f'];
-        shuffle(colorText);
-        console.log(colorText);
-        for (let i = 0; i < 3; i++) {
-            if (i == randomNumber) {
-                if (randomNumber == 0) {
-                    colorResult.innerHTML = 'Tap the <span style="color: ' + colorText[i] + '">Red</span>';
-                    console.log(randomNumber);
-                } else if (randomNumber == 1) {
-                    colorResult.innerHTML = 'Tap the <span style="color: ' + colorText[i] + '">Green</span>';
-                    console.log(randomNumber);
-                } else {
-                    colorResult.innerHTML = 'Tap the <span style="color: ' + colorText[i] + '">Blue</span>';
-                    console.log(randomNumber);
-                }
-            }
-        }
-    }
-
-    function colorTable() {
-        let tabela = '<table>';
-        let colors = ['color_list_0', 'color_list_1', 'color_list_2'];
-        shuffle(colors);
-        console.log(colors);
-        for (let j = 0; j < 1; j++) {
-            tabela += '<tr>';
-            for (let k = 0; k < 3; k++) {
-                tabela += '<td id="' + colors[k] + '"></td>';
-            }
-            tabela += '</tr>'
-        }
-        tabela += '</table>';
-        selectColor.innerHTML += tabela
-    }
-    colorTable();
-    function shuffle(array) {
-        array.sort(() => Math.random() - 0.5);
-    }
-</script>
+<div id="table-here"></div>
+<script src="tapnumber.js"></script>
 </body>
 </html>
