@@ -11,22 +11,22 @@ function randomNumberFunction() {
     for (let i = 0; i < 6; i++) {
         if (i == randomNumber) {
             if (randomNumber == 0) {
-                result.innerHTML = 'Tap the <span style="color: ' + colorText[i] + '">Red</span>';
+                result.innerHTML = 'Tap the <span style="color: ' + colorText[i] + '">color_0</span>';
                 console.log(randomNumber);
             } else if (randomNumber == 1) {
-                result.innerHTML = 'Tap the <span style="color: ' + colorText[i] + '">Green</span>';
+                result.innerHTML = 'Tap the <span style="color: ' + colorText[i] + '">color_1</span>';
                 console.log(randomNumber);
             } else if (randomNumber == 2) {
-                result.innerHTML = 'Tap the <span style="color: ' + colorText[i] + '">Blue</span>';
+                result.innerHTML = 'Tap the <span style="color: ' + colorText[i] + '">color_2</span>';
                 console.log(randomNumber);
             } else if (randomNumber == 3) {
-                result.innerHTML = 'Don\'t tap the <span style="color: ' + colorText[i] + '">Red</span>';
+                result.innerHTML = 'Don\'t tap the <span style="color: ' + colorText[i] + '">color_3</span>';
                 console.log(randomNumber);
             } else if (randomNumber == 4) {
-                result.innerHTML = 'Don\'t tap the <span style="color: ' + colorText[i] + '">Green</span>';
+                result.innerHTML = 'Don\'t tap the <span style="color: ' + colorText[i] + '">color_4</span>';
                 console.log(randomNumber);
             } else {
-                result.innerHTML = 'Don\'t tap the <span style="color: ' + colorText[i] + '">Blue</span>';
+                result.innerHTML = 'Don\'t tap the <span style="color: ' + colorText[i] + '">color_5</span>';
                 console.log(randomNumber);
             }
         }
@@ -37,13 +37,12 @@ function randomNumberFunction() {
         let id = event.target.getAttribute('id');
         if (randomNumber <= 2) {
             if (id && id.charAt(6) == randomNumber) {
-                alert('Got it!');
+                alert('You got it!');
                 console.log(randomNumber);
             } else {
                 alert('You didn\'t got it!')
             }
         } else if (randomNumber > 2) {
-
             if (id && id.charAt(6) == randomNumber) {
                 alert('You didn\'t got it!');
                 console.log(randomNumber);
