@@ -10,20 +10,25 @@ function getCyrillic(latin) {
     let cyrillicString = cyrillic.split('');
     for (let i = 0; i < latinString.length; i++) {
         if (latinString[i] === "l" && latinString[i+1] === "j") {
-            cyrillicString[i] = "љ";
+            cyrillicString = setCharAt(cyrillicString, i ,"љ");
             i++;
         }
         if (latinString[i] === "n" && latinString[i+1] === "j") {
-            cyrillicString[i] = "њ";
+            cyrillicString=setCharAt(cyrillicString,i ,"њ");
             i++;
         }
         if (latinString[i] === "d" && latinString[i+1] === "ž") {
-            cyrillicString[i] = "џ";
+            cyrillicString=setCharAt(cyrillicString,i ,"џ");
             i++;
         }
-        if (latinString[i] !== "l" && latinString[i] !== "n" && latinString[i] !== "d") { cyrillicString[i] = switchTo(latin.charAt(i)); }
+        if (latinString[i] !== "l" && latinString[i] !== "n" && latinString[i] !== "d") { cyrillicString=setCharAt(cyrillicString, i , switchTo(latinString[i])); }
     }
-    return cyrillic = cyrillicString.join('');
+    return cyrillicString.join('');
+}
+
+function setCharAt(str,index,chr) {
+    if(index > str.length-1) return str;
+    return str.substr(0,index) + chr + str.substr(index+1);
 }
 
 function switchTo(latinCharacter) {
