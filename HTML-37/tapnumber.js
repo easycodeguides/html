@@ -68,7 +68,7 @@ function colorTable() {
     shuffle(colors);
     for (let i = 0; i < 1; i++) {
         tabela += '<tr>';
-        for (let j = 0; j < 3; j++) {
+        for (let j = 0; j < 6; j++) {
             tabela += '<td id="' + colors[j] + '">' + colors[j] + '</td>';
         }
         tabela += '</tr>'
