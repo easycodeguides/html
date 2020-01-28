@@ -1,30 +1,35 @@
 function changing() {
-    let latinLetters = document.getElementById("latin").value.toString().toLowerCase();
-    document.getElementById("cyr").innerHTML = getCyrillic(latinLetters).toString();
+    let latinLetters = document.getElementById("latin").value.toLowerCase();
+    document.getElementById("cyr").innerHTML = getCyrillic(latinLetters);
 }
 
 function getCyrillic(latin) {
     let cyrillic = latin;
     for (let i = 0; i < latin.length; i++) {
         if (latin[i] === "l" && latin[i+1] === "j") {
-            cyrillic = setCharAt(cyrillic, i ,"љ");
+            cyrillic = setCharAt(cyrillic, i,"љ");
             i++;
+            continue;
         }
         if (latin[i] === "n" && latin[i+1] === "j") {
-            cyrillic=setCharAt(cyrillic,i ,"њ");
+            cyrillic = setCharAt(cyrillic, i,"њ");
             i++;
-            //continue; ? radi li ovo u js?
+            continue;
         }
         if (latin[i] === "d" && latin[i+1] === "ž") {
-            cyrillic=setCharAt(cyrillic,i ,"џ");
+            cyrillic = setCharAt(cyrillic, i,"џ");
             i++;
-            //continue;
+            continue;
         }
         if (i > 0 && latin[i] === "j" && latin[i-1] !== "l" && latin[i-1] !== "n") {
-            cyrillic=setCharAt(cyrillic, i , switchTo(latin[i]));
+            cyrillic = setCharAt(cyrillic, i, switchTo(latin[i]));
         }
-        if (i > 0 && latin[i] === "ž" && latin[i-1] !== "d") { cyrillic=setCharAt(cyrillic, i , switchTo(latin[i])); }
-        if (latin[i] !== "j" && latin[i] !== "ž") { cyrillic=setCharAt(cyrillic, i , switchTo(latin[i])); }
+        if (i > 0 && latin[i] === "ž" && latin[i-1] !== "d") {
+            cyrillic = setCharAt(cyrillic, i, switchTo(latin[i]));
+        }
+        if (latin[i] !== "j" && latin[i] !== "ž") {
+            cyrillic = setCharAt(cyrillic, i, switchTo(latin[i]));
+        }
     }
     return cyrillic;
 }
