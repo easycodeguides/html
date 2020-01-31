@@ -8,7 +8,7 @@ document.getElementById('click-this').addEventListener('click', shuffleRandomTab
 document.getElementById('table-here').addEventListener('click', selectColors);
 
 function randomNumberFunction(start, end) {
-    return Math.floor(Math.random() * (end - start)) + start;
+    return Math.floor(Math.random() * (end + 1 - start)) + start;
 }
 
 function differentTextColor() {
