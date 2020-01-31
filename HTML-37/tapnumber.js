@@ -1,6 +1,5 @@
-let randomBackgroundColor = randomNumberFunction(0,6,6);
 let textColorRandomNumber = randomNumberFunction(0,6,6);
-let colors = ['red', 'green', 'blue', "brown", "violet", "orange"];
+let colors;
 differentTextColor();
 colorTable();
 
@@ -23,17 +22,19 @@ function randomNumberFunction(start, end, count) {
 
 function differentTextColor() {
     let result = document.getElementById('result');
+    let randomBackgroundColor = randomNumberFunction(0,6,6);
     result.innerHTML = randomBackgroundColor;
+    colors = ['red', 'green', 'blue', "brown", "violet", "orange"];
     if(textColorRandomNumber <= 2){
         result.innerHTML = 'Tap the <span style="color: ' + colors[randomBackgroundColor] + '">'+colors[textColorRandomNumber]+'</span>';
     }
     if(textColorRandomNumber > 2){
         result.innerHTML = 'Don\'t tap the <span style="color: ' + colors[randomBackgroundColor] + '">'+colors[textColorRandomNumber]+'</span>';
     }
-    console.log(textColorRandomNumber);
 }
 function selectColors(event) {
     let color = event.target.getAttribute('data-color'); // event.target.dataset.color
+    colors = ['red', 'green', 'blue', "brown", "violet", "orange"];
     if (textColorRandomNumber <= 2) {
         if (color == colors[textColorRandomNumber]) {
             alert('You got it!');
@@ -47,13 +48,11 @@ function selectColors(event) {
             alert('You got it!')
         }
     }
-console.log(color);
-console.log(colors[textColorRandomNumber]);
 }
 
 function shuffleRandomTable() {
     randomNumberFunction();
-    colorTable()
+    colorTable();
 }
 
 function colorTable() {
