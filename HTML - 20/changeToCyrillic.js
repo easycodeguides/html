@@ -4,34 +4,22 @@ function changing() {
 }
 
 function getCyrillic(latin) {
-    let cyrillic = latin;
-    for (let i = 0; i < latin.length; i++) {
-        if (latin[i] === "l" && latin[i+1] === "j") {
-            cyrillic = setCharAt(cyrillic, i,"љ");
+    let cyrillic = [];
+    for (let i=0; i < latin.length; i++) {
+        if (latin[i] === "l" && latin[i + 1] === "j") {
+            cyrillic[i]="љ";
             i++;
-            continue;
-        }
-        if (latin[i] === "n" && latin[i+1] === "j") {
-            cyrillic = setCharAt(cyrillic, i,"њ");
+        } else if (latin[i] === "n" && latin[i + 1] === "j") {
+            cyrillic[i]="њ";
             i++;
-            continue;
-        }
-        if (latin[i] === "d" && latin[i+1] === "ž") {
-            cyrillic = setCharAt(cyrillic, i,"џ");
+        } else if (latin[i] === "d" && latin[i + 1] === "ž") {
+            cyrillic[i]= "џ";
             i++;
-            continue;
-        }
-        if (i > 0 && latin[i] === "j" && latin[i-1] !== "l" && latin[i-1] !== "n") {
-            cyrillic = setCharAt(cyrillic, i, switchTo(latin[i]));
-        }
-        if (i > 0 && latin[i] === "ž" && latin[i-1] !== "d") {
-            cyrillic = setCharAt(cyrillic, i, switchTo(latin[i]));
-        }
-        if (latin[i] !== "j" && latin[i] !== "ž") {
-            cyrillic = setCharAt(cyrillic, i, switchTo(latin[i]));
+        } else            {
+            cyrillic[i] = switchTo(latin[i]);
         }
     }
-    return cyrillic;
+    return cyrillic.join('');
 }
 
 function setCharAt(str,index,chr) {
