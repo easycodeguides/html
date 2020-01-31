@@ -1,39 +1,55 @@
-let randomNumber = Math.floor(Math.random() * 6);
+let randomBackgroundColor = randomNumberFunction(0,6,6);
+let textColorRandomNumber = randomNumberFunction(0,6,6);
 let colors = ['red', 'green', 'blue', "brown", "violet", "orange"];
-randomNumberFunction();
+differentTextColor();
 colorTable();
-
-
 
 document.getElementById('click-this').addEventListener('click', shuffleRandomTable);
 document.getElementById('table-here').addEventListener('click', selectColors);
 
-function randomNumberFunction() {
+function randomNumberFunction(start, end, count) {
+    let returnArray = [],
+        randomNumber;
+    for(let i=0; i<count; i++){
+        randomNumber = Math.floor(Math.random() * (end - start)) + start;
+        if(returnArray.indexOf(randomNumber) == -1){
+            returnArray.push(randomNumber)
+        }else {
+            --i;
+        }
+    }
+    return randomNumber
+}
+
+function differentTextColor() {
     let result = document.getElementById('result');
-    result.innerHTML = randomNumber;
-    shuffle(colors);
-    let randomNumberTwo = Math.floor(Math.random() *6);
-    result.innerHTML = 'Tap the <span style="color: ' + colors[randomNumberTwo] + '">'+colors[randomNumber]+'</span>';
+    result.innerHTML = randomBackgroundColor;
+    if(textColorRandomNumber <= 2){
+        result.innerHTML = 'Tap the <span style="color: ' + colors[randomBackgroundColor] + '">'+colors[textColorRandomNumber]+'</span>';
+    }
+    if(textColorRandomNumber > 2){
+        result.innerHTML = 'Don\'t tap the <span style="color: ' + colors[randomBackgroundColor] + '">'+colors[textColorRandomNumber]+'</span>';
+    }
+    console.log(textColorRandomNumber);
 }
 function selectColors(event) {
     let color = event.target.getAttribute('data-color'); // event.target.dataset.color
-    if (randomNumber <= 2) {
-        if (color == colors[randomNumber]) {
+    if (textColorRandomNumber <= 2) {
+        if (color == colors[textColorRandomNumber]) {
             alert('You got it!');
-            console.log(randomNumber);
         } else {
             alert('You didn\'t got it!')
         }
-    } else if (randomNumber > 2) {
-        if (color == colors[randomNumber]) {
-            alert('You didn\'t got it!');
-            console.log(randomNumber);
+    } else if (textColorRandomNumber > 2) {
+        if (color == colors[textColorRandomNumber]) {
+            alert('You didn\'t got it');
         } else {
             alert('You got it!')
         }
     }
+console.log(color);
+console.log(colors[textColorRandomNumber]);
 }
-
 
 function shuffleRandomTable() {
     randomNumberFunction();
@@ -43,13 +59,11 @@ function shuffleRandomTable() {
 function colorTable() {
     let tabela = '<table>';
     shuffle(colors);
-    for (let i = 0; i < 1; i++) {
         tabela += '<tr>';
         for (let j = 0; j < 6; j++) {
             tabela += '<td style="background:' + colors[j] + '" data-color="'+colors[j]+'"></td>';
         }
-        tabela += '</tr>'
-    }
+        tabela += '</tr>';
     tabela += '</table>';
     document.getElementById('table-here').innerHTML = tabela
 }
