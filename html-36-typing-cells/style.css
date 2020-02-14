@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+header{
+    display: flex;
+    height: 10vh;
+    width: 100vw;
+    justify-content: space-evenly;
+}
+#container{
+    display: grid;
+    width: 40vw;
+    height: 43vw;
+    background-color: rgba(220,220,220,0.7);
+    border: solid rgba(128, 128, 128,0.7) 1px;  
+    grid-template-columns: 5vw 5vw 5vw 5vw;
+    grid-template-rows:5vw 5vw 5vw 5vw 5vw ;
+    grid-gap: 2vw;
+    padding:5vw 7vw;
+    margin: auto;
+}
+.oneCell{
+    background-color: white;
+    border: solid rgba(128, 128, 128,0.7) 1px;
+}
+.touchedCell{
+    background-color: rgba(170, 164, 164,0.5);
+    border: solid rgba(128, 128, 128,0.7) 1px;
+}
+.wrongCell{
+    background-color: orangered;
+    border: solid rgba(128, 128, 128,0.7) 1px;
+}
+.rightCell{
+    background-color: lightblue;
+    border: solid rgba(128, 128, 128,0.7) 1px;
+}
