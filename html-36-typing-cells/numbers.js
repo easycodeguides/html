@@ -16,15 +16,13 @@ function startNewGame() {
   startGame();
 }
 function startGame(){
-
   timeLeft = 40;
   var container = document.getElementById("container");
   container.removeEventListener("click",alertingEndGame);
   container.innerHTML = "";
   var timeDisp = document.getElementById("timeCounter");
   timeDisp.innerHTML = "";
-  var arr = [];
-  
+  var arr = []; 
   for (var index = 1; index <= 20; index++) {
     var oneCell = document.createElement("div");
     oneCell.setAttribute("class", "oneCell");
@@ -45,14 +43,10 @@ function startGame(){
   }
   myTimeDel=setInterval(timeCountDown, 1000);
 }
-
-
 function changeColor() {
   var x = this.firstChild.firstChild.innerHTML;
   removeOrange();
-  if (counter == x) {
-   
-    
+  if (counter == x) {   
     this.setAttribute("class", "touchedCell");
     this.removeEventListener("click", changeColor);
     this.firstChild.firstChild.innerHTML="";
@@ -76,7 +70,6 @@ startReverseGame();
     this.setAttribute("class", "wrongCell");
   }
 }
-
 function removeOrange() {
   var redCells = document.getElementsByClassName("wrongCell");
   for (var i = 0; i < redCells.length; i++) {
@@ -96,7 +89,6 @@ function timeCountDown() {
   if (timeLeft > 0) {
     timeDisp.innerHTML = timeLeft;
     timeLeft--;
-    //setTimeout(timeCountDown, 1000);
   } else {
     timeDisp.innerHTML = 0;
     gameOver();
