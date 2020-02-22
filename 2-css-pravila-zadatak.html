@@ -68,6 +68,107 @@
             border-radius: 50%;
             border-color: red green blue black;
         }
+
+        #div11 {
+            border: solid 25px;
+            border-color: red green blue black;
+            border-radius: 50%;
+            text-decoration: line-through;
+        }
+
+        #inner11 {
+            position: relative;
+            width: 50%;
+            height: 50%;
+            margin: auto;
+            margin-top: 40px;
+            border: hidden;
+        }
+
+        #inner12 {
+            position: relative;
+            width: 70%;
+            height: 70%;
+            margin: auto;
+            margin-top: 20px;
+        }
+        
+        #div13 {
+            background-color: yellow;
+            border: 10px solid magenta;
+        }
+
+        #inner13 {
+            position: relative;
+            margin: auto;
+            width: 80%;
+            height: 80%;
+            margin-top: 13px;
+            background-color: red;
+            border: 5px solid blue;
+        }
+
+        #div14 {
+            background-color: yellow;
+            border: solid 10px magenta;
+            position: relative;
+        }
+        #div14::before {
+            content: "";
+            position: absolute;
+            border: solid 5px green;
+            top: -15px;
+            left: -15px;
+            right: -15px;
+            bottom: -15px;
+        }
+
+        #inner14 {
+            position: relative;
+            width: 75%;
+            height: 75%;
+            margin: auto;
+            margin-top: 16px;
+            background-color: red;
+
+            border: 5px solid blue;
+        }
+        #inner14::before {
+            content: "";
+            position: absolute;
+            border: solid 5px green;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+        }
+
+        #inner15 {
+            position: relative;
+            margin: auto;
+            margin-top: 20px;
+        }
+
+        #inner16 {
+            position: relative;
+            margin: auto;
+            bottom: 13px;
+            right: 20px;
+        }
+
+        #div17 {
+            position: relative;
+            bottom: 25px;
+        }
+        #inner17 {
+            position: absolute;
+            margin: auto;
+            bottom: 25px;
+            right: 25px;
+        }
+        
+        
+
     </style>
 </head>
 <body>
@@ -82,14 +183,14 @@
 <div id="div8">Osam</div>
 <div id="div9">Devet</div>
 <div id="div10">Deset</div>
-<div id="div11">11</div>
-<div id="div12"><div>12</div></div>
-<div id="div13"><div>13</div></div>
-<div id="div14"><div>14</div></div>
-<div id="div15"><div>15</div></div>
-<div id="div16"><div>16</div></div>
-<div id="div17"><div>17</div></div>
-<div id="div18"><div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda consequatur dolorum explicabo in, laudantium, optio pariatur quam quod ratione sapiente totam, vero voluptatibus! Eos esse id rem! A id, odio.</div></div>
+<div id="div11"><div id="inner11">11</div></div>
+<div id="div12"><div id="inner12">12</div></div>
+<div id="div13"><div id="inner13">13</div></div>
+<div id="div14"><div id="inner14">14</div></div>
+<div id="div15"><div id="inner15">15</div></div>
+<div id="div16"><div id="inner16">16</div></div>
+<div id="div17"><div id="inner17">17</div></div>
+<div id="div18"><div id="inner18">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda consequatur dolorum explicabo in, laudantium, optio pariatur quam quod ratione sapiente totam, vero voluptatibus! Eos esse id rem! A id, odio.</div></div>
 <div id="div19"><div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores cum delectus, deserunt dolor doloremque eius, explicabo id illo ipsa itaque laborum molestiae officia quidem, reprehenderit similique sit temporibus totam ullam.</div></div>
 <div id="div20">
     <div>Jedan</div>
