@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Login Form</title>
+        <style>
+            body {
+                box-sizing: border-box;
+                font-family: sans-serif;
+            }
+
+            #maindiv {
+                border: solid 1px rgba(175, 175, 175, 0.5);
+                border-radius: 10px;
+                width: fit-content;
+                margin: auto;
+                padding: 30px;
+                padding-bottom: 50px;
+            }
+
+            .text {
+                font-weight: lighter;
+                text-align: center;
+            }
+
+            .heading1 {
+                font-size: 35px;
+            }
+
+            .heading2 {
+                font-size: 25px;
+            }
+
+            .box-margin {
+                margin: 20px 20px; 
+            }
+
+            #button {
+                position: relative;
+                left: 350px;
+                top: 7px;
+                padding: 12px 25px;
+                border: none;
+                border-radius: 5px;
+                color: white;
+                background-color: dodgerblue;
+            }
+
+            #button:hover {
+                background-color: deepskyblue;
+            }
+
+            .input-fields {
+                padding: 10px;
+                width: 400px;
+                margin: 20px 20px;
+                border: solid 1px rgba(175, 175, 175, 0.5);
+                border-radius: 2px;
+            }
+
+
+
+        </style>
+    </head>
+    <body>
+        <div id="maindiv">
+            <h1 class="text box-margin heading1">Sign in</h1>
+            <h2 class="text box-margin heading2">Use your Google Account</h2>
+            <form>
+                <input class="input-fields" type="text" placeholder="Username">
+                <br>
+                <input class="input-fields" type="text" placeholder="Password">
+                <br>
+                <button id="button">Sign in</button>
+            </form>
+        </div>
+    </body>
+</html>
